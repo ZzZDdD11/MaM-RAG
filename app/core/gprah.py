@@ -91,9 +91,7 @@ def node_vector_search(state: AgentState, config: RunnableConfig):
         search_k=top_k * 10   # 自动设定粗排数量
     )
 
-    queries = state["sub_queries"]
-    top_k = meta.get("top_k", 3)
-    
+    queries = state["sub_queries"]    
     results = []
 
     for q in queries:
@@ -110,6 +108,7 @@ def node_graph_search(state: AgentState, config: RunnableConfig):
     """
     节点：图谱检索 (升级版)
     """
+    #根据前端传入参数（通过RunnableConfig），决定是否启动图谱检索
     meta = config.get("metadata", {})
     if meta.get("enable_graph", True) is False:
         return {"retrieved_contents": []}
@@ -246,9 +245,9 @@ workflow.add_node("web_search", node_web_search) # 需要时取消注释
 workflow.add_node("generate", node_generate)
 
 # 定义流程
-# 1. 
+# 1. 设置起点
 workflow.set_entry_point("router_node")
-# 2. 
+# 2. 设置条件边
 workflow.add_conditional_edges(
     "router_node",
     route_decision,

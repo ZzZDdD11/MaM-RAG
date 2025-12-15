@@ -54,8 +54,8 @@ class SemanticRouter:
             result = router_chain.invoke({"question": question})
             
             # 打印决策结果，方便调试
-            print(f"👉 [Router] 决策结果: {result.datasources}")
-            return result.datasources
+            print(f"👉 [Router] 决策结果: {result.datasources}") # type: ignore
+            return result.datasources # type: ignore
             
         except Exception as e:
             print(f"❌ [Router] 路由失败，默认回退到全量检索: {e}")

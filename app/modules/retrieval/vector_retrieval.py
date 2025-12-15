@@ -29,6 +29,7 @@ class MineralVectorRetriever(BaseRetriever):
         """
         初始化方法
         """
+        # 初始化向量数据库
         super().__init__(**kwargs)
         self._vector_store = get_vector_store()
 
@@ -52,9 +53,8 @@ class MineralVectorRetriever(BaseRetriever):
         ranked_results = rerank_documents(query, doc_contents, top_k=self.top_k)
 
         final_docs=[]
-
+        # 
         for index, score in ranked_results:
-
             target_doc = docs[index]
             target_doc.metadata["rerank_score"] = score
             final_docs.append(target_doc)

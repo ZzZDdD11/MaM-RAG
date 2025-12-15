@@ -18,14 +18,7 @@ async def lifespan(app: FastAPI):
     logger.info(f"配置信息: Working Dir={settings.working_dir}, LLM={settings.llm_model_name}")
     
     try:
-        # 1. 【新增】必须先完成 LightRAG 的异步初始化
-        # 这会修复 "JsonDocStatusStorage not initialized" 错误
-       #await LightRAGService.initialize()
-        # 初始化 Agent 并挂载到 app.state
-        # 这样就不需要全局变量了，生命周期跟随 app
-        # 注意：这里传入 settings，因为我们在 config.py 里做了兼容设计
-        #app.state.agent = MRetrievalAgent(settings)
-        #logger.info("✅ RAG 引擎初始化完成，随时待命！")
+
         logger.info("✅ 新架构 (Milvus + Neo4j + LangGraph) 就绪")
     except Exception as e:
         logger.error(f"❌ 引擎初始化失败: {e}")

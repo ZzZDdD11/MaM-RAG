@@ -22,11 +22,12 @@ class GraphExtractor:
     def _init_llm(cls):
         # 专门用于抽取的 LLM
         # 建议设置 temperature=0，让提取结果更稳定
-        cls._llm = ChatOpenAI(
-            base_url="https://api.deepseek.com/v1",
-            model="deepseek-chat", # 例如 "qwen2.5:7b"
-            api_key="sk-8f6835ce460749399549458262c8ea5d",
-            temperature=0
+        cls._llm = ChatOllama(
+            base_url="http://localhost:11434",
+            # 建议用 qwen2.5:7b 或 qwen2.5:1.5b
+            # 7b 抽取效果更好，1.5b 速度更快
+            model="qwen2.5:7b", 
+            temperature=0,
         )
         
         # 初始化转换器

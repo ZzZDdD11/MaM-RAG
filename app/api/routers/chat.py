@@ -38,7 +38,7 @@ async def chat_endpoint(
     logger.info(f"[{req_id}] 收到请求: {body.query} | Config: Graph={body.enable_graph}, Web={body.enable_web}")
 
     try:
-        # 1. 构造图谱初始状态 (Input State)
+        # 1. 构造图初始状态 (Input State)
         # 必须与 app/core/graph.py 中的 AgentState 对应
         initial_state = {
             "original_query": body.query,
@@ -58,7 +58,7 @@ async def chat_endpoint(
             }
         }
 
-        # 3. 异步执行图谱
+        # 3. 异步执行图
         # 使用 ainvoke 非阻塞调用
         final_state = await app_graph.ainvoke(initial_state, config=run_config) # type: ignore
 
