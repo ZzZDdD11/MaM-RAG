@@ -1,0 +1,38 @@
+[project]
+name = "mineralrag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiofiles>=25.1.0",
+    "ddgs>=9.9.3",
+    "docling>=2.64.0",
+    "duckduckgo-search>=8.1.1",
+    "fastapi>=0.124.0",
+    "jwt>=1.4.0",
+    "langchain>=1.1.3",
+    "langchain-community>=0.4.1",
+    "langchain-experimental>=0.4.1",
+    "langchain-huggingface>=1.1.0",
+    "langchain-milvus>=0.3.1",
+    "langchain-ollama>=1.0.0",
+    "langchain-openai>=1.1.3",
+    "langgraph>=1.0.4",
+    "langsmith>=0.4.56",
+    "lightrag-hku>=1.4.9.8",
+    "neo4j>=6.0.3",
+    "ollama>=0.6.1",
+    "pydantic>=2.12.5",
+    "pydantic-settings>=2.12.0",
+    "pymilvus>=2.6.5",
+    "python-multipart>=0.0.20",
+    "qwen-vl-utils>=0.0.14",
+    "requests>=2.32.5",
+    "sentence-transformers>=5.1.2",
+    "streamlit>=1.52.1",
+    "torch>=2.9.1",
+    "torchvision>=0.24.1",
+    "transformers>=4.57.3",
+    "uvicorn>=0.38.0",
+]

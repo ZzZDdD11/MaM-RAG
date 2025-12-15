@@ -1,0 +1,63 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.dist/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Test/Dev caches
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# Logs
+*.log
+lightrag.log
+
+# Experiment outputs
+outputs/
+
+# Local stores / indices (regenerate via scripts)
+lightrag_store/
+rag_storage/
+
+# Datasets (keep a tiny sample only; or use Git LFS)
+dataset/**/pid_splits.json
+dataset/**/problems.json
+dataset/**/captions.json
+# Or ignore entire generated dataset folder if reproducible:
+# dataset/mineral_neo4j_based/
+
+# Models / checkpoints
+models/
+checkpoints/
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Environment
+.env
+venv/
+.venv/
+env/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+#database
+volumes/
+lightrag_store/
+rag_storage/
+/volumes/
+*.wal
+*.db.*
+neostore.*
